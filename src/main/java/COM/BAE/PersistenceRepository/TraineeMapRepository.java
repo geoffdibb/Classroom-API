@@ -26,9 +26,9 @@ public class TraineeMapRepository implements TraineeRepositoryInterface {
 	}
 
 	@Override
-	public String getAnTrainee(int traineeID) {
+	public String getAnTrainee(int traineeId) {
 
-		return util.getJSONForObject(manager.find(TraineeAccount.class, traineeID));
+		return util.getJSONForObject(manager.find(TraineeAccount.class, traineeId));
 
 	}
 
