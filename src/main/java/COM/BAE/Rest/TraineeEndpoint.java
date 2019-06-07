@@ -6,13 +6,13 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import COM.BAE.BusinessLayer.traineeServiceImplemented;
+import COM.BAE.BusinessLayer.traineeService;
 
 @Path("/Trainee")
 public class TraineeEndpoint {
 
 	@Inject
-	private traineeServiceImplemented service;
+	traineeService service;
 
 	@Path("/getATrainee/{traineeId}")
 	@GET
@@ -25,6 +25,10 @@ public class TraineeEndpoint {
 	@GET
 	@Produces({ "application/json" })
 	public String getAllTrainees() {
+
+		// traineeServiceImplemented tst = new traineeServiceImplemented();
+		// return tst.getAllTrainees();
+
 		return service.getAllTrainees();
 	}
 }

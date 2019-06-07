@@ -3,6 +3,7 @@ package COM.BAE.PersistenceRepository;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -10,6 +11,7 @@ import javax.persistence.PersistenceContext;
 import COM.BAE.PersistenceDomain.TraineeAccount;
 import COM.BAE.UTIL.JSONUtil;
 
+@Alternative
 public class TraineeMapRepository implements TraineeRepositoryInterface {
 
 	Map<Integer, TraineeAccount> accountMap = new HashMap<Integer, TraineeAccount>();
