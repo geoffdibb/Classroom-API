@@ -13,6 +13,7 @@ import COM.BAE.UTIL.JSONUtil;
 public class TraineeMapRepository implements TraineeRepositoryInterface {
 
 	Map<Integer, TraineeAccount> accountMap = new HashMap<Integer, TraineeAccount>();
+
 	@PersistenceContext(unitName = "primary")
 	private EntityManager manager;
 

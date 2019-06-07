@@ -6,13 +6,13 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import COM.BAE.BusinessLayer.traineeService;
+import COM.BAE.BusinessLayer.traineeServiceImplemented;
 
 @Path("/Trainee")
 public class TraineeEndpoint {
 
 	@Inject
-	private traineeService service;
+	private traineeServiceImplemented service;
 
 	@Path("/getATrainee/{traineeId}")
 	@GET
