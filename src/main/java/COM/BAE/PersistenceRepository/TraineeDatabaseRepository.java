@@ -25,16 +25,28 @@ public class TraineeDatabaseRepository implements TraineeRepositoryInterface {
 
 	@Override
 	public String createTrainee(String name) {
-		return null;
+		TraineeAccount newtrainee = util.getObjectForJSON(name, TraineeAccount.class);
+		manager.persist(newtrainee);
+		return "Trainee Made";
 	}
 
+	// @Override
+	// @Transactional(TxType.REQUIRED)
+	// public String createAccount(String account) {
+	// Account newAccount = new JSONUtil().getObjectForJSON(account, Account.class);
+	// em.persist(newAccount);
+	//
+	// return "Account made";
+	// }
 	@Override
-	@Transactional(TxType.SUPPORTS)
+	
 	public String getAllTrainees() {
-		Query query = null;
-		query = manager.createQuery("SELECT a FROM Trainee a", TraineeAccount.class);
+		Query query = manager.createQuery("SELECT a FROM TraineeAccount a", TraineeAccount.class);
 
 		List<TraineeAccount> traineeacList = query.getResultList();
+
+		
+		
 		return util.getJSONForObject(traineeacList);
 	}
 
