@@ -39,14 +39,12 @@ public class TraineeDatabaseRepository implements TraineeRepositoryInterface {
 	// return "Account made";
 	// }
 	@Override
-	
+
 	public String getAllTrainees() {
 		Query query = manager.createQuery("SELECT a FROM TraineeAccount a", TraineeAccount.class);
 
 		List<TraineeAccount> traineeacList = query.getResultList();
 
-		
-		
 		return util.getJSONForObject(traineeacList);
 	}
 

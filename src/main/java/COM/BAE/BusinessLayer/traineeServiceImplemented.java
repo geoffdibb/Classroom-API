@@ -16,8 +16,7 @@ public class traineeServiceImplemented implements traineeService {
 
 	@Override
 	public String getAllTrainees() {
-		// return traineeRepo.getAllTrainees();
-		return "id";
+		return traineeRepo.getAllTrainees();
 	}
 
 	@Override
