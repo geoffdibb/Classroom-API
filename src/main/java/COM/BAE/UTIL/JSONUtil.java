@@ -1,4 +1,4 @@
-package com.qa.util;
+package COM.BAE.UTIL;
 
 import com.google.gson.Gson;
 
@@ -11,7 +11,7 @@ public class JSONUtil {
 	}
 
 	public String getJSONForObject(Object obj) {
-		
+
 		return gson.toJson(obj);
 	}
 
