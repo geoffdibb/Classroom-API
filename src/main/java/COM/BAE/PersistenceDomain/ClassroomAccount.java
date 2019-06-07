@@ -2,18 +2,15 @@ package COM.BAE.PersistenceDomain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class ClassroomAccount {
 
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private int ClassroomID;
-	@Column
 	private String nameOfTrainer;
+	@Column
+	private int ClassroomID;
 
 	public ClassroomAccount() {
 	}

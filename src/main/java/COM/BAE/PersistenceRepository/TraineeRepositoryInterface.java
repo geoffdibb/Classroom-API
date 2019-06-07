@@ -6,10 +6,10 @@ public interface TraineeRepositoryInterface {
 
 	String getAllTrainees();
 
-	String getAnTrainee(int traineeID);
+	String getAnTrainee(int traineeId);
 
-	String updateTrainee(String name, int traineeID);
+	String updateTrainee(String name, int traineeId);
 
-	String deleteTrainee(int traineeID);
+	String deleteTrainee(int traineeId);
 
 }

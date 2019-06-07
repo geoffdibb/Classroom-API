@@ -11,7 +11,7 @@ public class traineeServiceImplemented implements traineeService {
 
 	@Override
 	public String createTrainee(String name) {
-		return null;
+		return traineeRepo.createTrainee(name);
 	}
 
 	@Override
@@ -20,19 +20,19 @@ public class traineeServiceImplemented implements traineeService {
 	}
 
 	@Override
-	public String getAnTrainee(int traineeID) {
+	public String getAnTrainee(int traineeId) {
 
-		return traineeRepo.getAnTrainee(traineeID);
+		return traineeRepo.getAnTrainee(traineeId);
 	}
 
 	@Override
-	public String updateTrainee(String name, int traineeID) {
+	public String updateTrainee(String name, int traineeId) {
 		return null;
 	}
 
 	@Override
-	public String deleteTrainee(int traineeID) {
-		return null;
+	public String deleteTrainee(int traineeId) {
+		return traineeRepo.deleteTrainee(traineeId);
 	}
 
 }
