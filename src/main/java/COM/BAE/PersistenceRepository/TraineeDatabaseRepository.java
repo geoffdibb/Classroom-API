@@ -27,17 +27,9 @@ public class TraineeDatabaseRepository implements TraineeRepositoryInterface {
 	public String createTrainee(String name) {
 		TraineeAccount newtrainee = util.getObjectForJSON(name, TraineeAccount.class);
 		manager.persist(newtrainee);
-		return "Trainee Made";
+		return "Trainee Created";
 	}
 
-	// @Override
-	// @Transactional(TxType.REQUIRED)
-	// public String createAccount(String account) {
-	// Account newAccount = new JSONUtil().getObjectForJSON(account, Account.class);
-	// em.persist(newAccount);
-	//
-	// return "Account made";
-	// }
 	@Override
 
 	public String getAllTrainees() {
@@ -49,18 +41,25 @@ public class TraineeDatabaseRepository implements TraineeRepositoryInterface {
 	}
 
 	@Override
-	public String getAnTrainee(int traineeID) {
-		return util.getJSONForObject(manager.find(TraineeAccount.class, traineeID));
+	public String getAnTrainee(int traineeId) {
+		return util.getJSONForObject(manager.find(TraineeAccount.class, traineeId));
 	}
 
 	@Override
-	public String updateTrainee(String name, int traineeID) {
+	public String updateTrainee(String name, int traineeId) {
 		return null;
 	}
 
 	@Override
-	public String deleteTrainee(int traineeID) {
-		return null;
+	public String deleteTrainee(int traineeId) {
+		TraineeAccount trainacctemp = util.getObjectForJSON(getAnTrainee(traineeId), TraineeAccount.class);
+
+		if (manager.contains(manager.find(TraineeAccount.class, traineeId))) {
+
+			manager.remove(manager.find(TraineeAccount.class, traineeId));
+		}
+		return "{\"message\": \"Trainee deleted\"}";
+
 	}
 
 }
