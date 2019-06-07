@@ -1,6 +1,4 @@
-INSERT INTO MOVIE (id, title, ageRating) VALUES (1, 'Saw', '18')
-INSERT INTO MOVIE (id, title, ageRating) VALUES (2, 'Up', 'U')
-INSERT INTO MOVIE (id, title, ageRating) VALUES (3, 'Hop', 'U')
-INSERT INTO MOVIE (id, title, ageRating) VALUES (4, 'Some Film', 'PG')
-
-INSERT INTO SUBMOVIE (id, title, ageRating, subAttribute) VALUES (4, 'Some Film', 'PG', 'Sub')
+INSERT INTO TraineeAccount (traineeId, traineeName, classroomID) VALUES (1, 'Che', 1)
+INSERT INTO TraineeAccount (traineeId, traineeName, classroomID) VALUES (2, 'Harris', 1)
+INSERT INTO TraineeAccount (traineeId, traineeName, classroomID) VALUES (3, 'Joel', 2)
+INSERT INTO TraineeAccount (traineeId, traineeName, classroomID) VALUES (4, 'Kevil', 2)

@@ -9,7 +9,7 @@ import javax.ws.rs.Produces;
 import COM.BAE.BusinessLayer.traineeService;
 
 @Path("/Trainee")
-public class TrainneeEndpoint {
+public class TraineeEndpoint {
 
 	@Inject
 	private traineeService service;
@@ -20,9 +20,11 @@ public class TrainneeEndpoint {
 	public String getAnTrainee(@PathParam("traineeId") int traineeId) {
 		return service.getAnTrainee(traineeId);
 	}
-	// @Path("/getAMovie/{id}")
-	// @GET
-	// @Produces({ "application/json" })
-	// public String getAMovie(@PathParam("id") Long id) {
-	// return service.getAMovie(id);
+
+	@Path("/getAllTrainees")
+	@GET
+	@Produces({ "application/json" })
+	public String getAllTrainees() {
+		return service.getAllTrainees();
+	}
 }
