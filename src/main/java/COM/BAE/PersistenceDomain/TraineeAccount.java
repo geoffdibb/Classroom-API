@@ -12,9 +12,9 @@ public class TraineeAccount {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private int traineeId;
-	@Column
+	@Column(length = 50)
 	private String traineeName;
-	@Column
+	@Column(length = 50)
 	private int classroomID;
 
 	public TraineeAccount() {

@@ -1,5 +1,8 @@
 package COM.BAE.PersistenceRepository;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -9,6 +12,7 @@ import COM.BAE.UTIL.JSONUtil;
 
 public class TraineeMapRepository implements TraineeRepositoryInterface {
 
+	Map<Integer, TraineeAccount> accountMap = new HashMap<Integer, TraineeAccount>();
 	@PersistenceContext(unitName = "primary")
 	private EntityManager manager;
 
@@ -17,12 +21,14 @@ public class TraineeMapRepository implements TraineeRepositoryInterface {
 
 	@Override
 	public String createTrainee(String name) {
-		return null;
+		TraineeAccount newAccount = new JSONUtil().getObjectForJSON(name, TraineeAccount.class);
+		accountMap.put(newAccount.getTraineeId(), newAccount);
+		return "Account successfuly created";
 	}
 
 	@Override
 	public String getAllTrainees() {
-		return null;
+		return new JSONUtil().getJSONForObject(accountMap);
 	}
 
 	@Override
@@ -34,12 +40,23 @@ public class TraineeMapRepository implements TraineeRepositoryInterface {
 
 	@Override
 	public String updateTrainee(String name, int traineeID) {
-		return null;
+		TraineeAccount traineeToUpdate = new JSONUtil().getObjectForJSON(name, TraineeAccount.class);
+		accountMap.put(traineeID, traineeToUpdate);
+
+		return "Account successfully updated";
 	}
 
 	@Override
 	public String deleteTrainee(int traineeID) {
-		return null;
+		accountMap.remove((Integer) traineeID);
+		return "Account successfully removed";
 	}
 
+	public Map<Integer, TraineeAccount> getAccountMap() {
+		return accountMap;
+	}
+
+	public void setAccountMap(Map<Integer, TraineeAccount> accountMap) {
+		this.accountMap = accountMap;
+	}
 }

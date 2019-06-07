@@ -14,7 +14,7 @@ public class TraineeEndpoint {
 	@Inject
 	private traineeService service;
 
-	@Path("/getATrainnee/{traineeId}")
+	@Path("/getATrainee/{traineeId}")
 	@GET
 	@Produces({ "application/json" })
 	public String getAnTrainee(@PathParam("traineeId") int traineeId) {
