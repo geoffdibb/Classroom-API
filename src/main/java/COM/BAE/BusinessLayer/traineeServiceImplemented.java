@@ -2,12 +2,12 @@ package COM.BAE.BusinessLayer;
 
 import javax.inject.Inject;
 
-import COM.BAE.PersistenceRepository.TraineeDatabaseRepository;
+import COM.BAE.PersistenceRepository.TraineeRepositoryInterface;
 
 public class traineeServiceImplemented implements traineeService {
 
 	@Inject
-	TraineeDatabaseRepository traineeRepo;
+	TraineeRepositoryInterface traineeRepo;
 
 	@Override
 	public String createTrainee(String name) {

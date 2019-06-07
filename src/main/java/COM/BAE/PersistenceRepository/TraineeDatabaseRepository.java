@@ -6,7 +6,7 @@ import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 import javax.transaction.Transactional.TxType;
 
@@ -31,11 +31,11 @@ public class TraineeDatabaseRepository implements TraineeRepositoryInterface {
 	@Override
 	@Transactional(TxType.SUPPORTS)
 	public String getAllTrainees() {
-		TypedQuery<TraineeAccount> query = null;
+		Query query = null;
 		query = manager.createQuery("SELECT a FROM Trainee a", TraineeAccount.class);
 
-		List<TraineeAccount> accList = query.getResultList();
-		return new JSONUtil().getJSONForObject(accList);
+		List<TraineeAccount> traineeacList = query.getResultList();
+		return util.getJSONForObject(traineeacList);
 	}
 
 	@Override
